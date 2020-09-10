@@ -1,0 +1,101 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.ogalab</groupId>
+  <artifactId>SimpleUtil-numerical</artifactId>
+  <version>6.0.3</version>
+  
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+  </properties>
+ 
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>compile</scope>
+    </dependency> 
+
+    <dependency>
+      <groupId>net.sourceforge.parallelcolt</groupId>
+      <artifactId>parallelcolt</artifactId>
+      <version>0.10.1</version>
+</dependency>
+
+    <dependency>
+      <groupId>net.ogalab</groupId>
+      <artifactId>SimpleUtil</artifactId>
+      <version>6.0.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>colt</groupId>
+      <artifactId>colt</artifactId>
+      <version>1.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jfree</groupId>
+      <artifactId>jfreechart</artifactId>
+      <version>1.0.14</version>
+    </dependency>
+  </dependencies>
+ 
+  <build>
+    <plugins>
+      <plugin>
+	<artifactId>maven-compiler-plugin</artifactId>
+	<configuration>
+	  <source>1.6</source>
+	  <target>1.6</target>
+	  <encoding>UTF-8</encoding>
+	</configuration>
+      </plugin> 
+ 
+      <!-- This plugin is needed for the use of the junit ver 4.x -->
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.17</version>
+      </plugin>
+ 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <linksource>true</linksource>
+          <show>private</show>
+          <maxmemory>1g</maxmemory>
+        </configuration>
+      </plugin>
+ 
+    </plugins>
+    
+    
+    <extensions>
+      <!-- for webdav based private repositories -->
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav</artifactId>
+        <version>1.0-beta-2</version>
+      </extension>
+    </extensions>
+    
+    
+  </build>
+ 
+  <!-- private repositories from which libraries are downloaded -->
+  <repositories>
+  </repositories> 
+
+ 
+   <!-- Private repositories to which this archtect is uploaded -->
+  <distributionManagement>
+    <!-- Configuration for webdav based private repositories -->
+    <repository>
+    </repository>
+    <snapshotRepository>
+    </snapshotRepository>
+  </distributionManagement>
+</project>
